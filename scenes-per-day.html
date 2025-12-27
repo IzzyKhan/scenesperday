@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scenes Per Day</title>
+    <link rel="stylesheet" href="scenes-per-day.css">
+</head>
+<body>
+        <!-- Feedback Button -->
+        <button id="feedback-btn" class="feedback-button">Feedback</button>
+
+        <!-- Feedback Modal -->
+        <div id="feedback-modal" class="feedback-modal">
+            <div class="feedback-modal-content">
+                <span class="feedback-close">&times;</span>
+                <h2>Send Feedback</h2>
+                <form id="feedback-form">
+                    <div>
+                        <label for="feedback-name">Name (optional)</label>
+                        <input type="text" id="feedback-name" name="name">
+                    </div>
+                    <div>
+                        <label for="feedback-email">Email (optional)</label>
+                        <input type="email" id="feedback-email" name="email">
+                    </div>
+                    <div>
+                        <label for="feedback-likelihood">How likely are you to use this tool? *</label>
+                        <select id="feedback-likelihood" name="likelihood" required>
+                            <option value="">Select an option</option>
+                            <option value="Very likely">Very likely</option>
+                            <option value="Likely">Likely</option>
+                            <option value="Neutral">Neutral</option>
+                            <option value="Unlikely">Unlikely</option>
+                            <option value="Very unlikely">Very unlikely</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="feedback-recommend">Would you recommend to others? *</label>
+                        <select id="feedback-recommend" name="recommend" required>
+                            <option value="">Select an option</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                            <option value="Not sure">Not sure</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="feedback-message">Message</label>
+                        <textarea id="feedback-message" name="message" rows="5"></textarea>
+                    </div>
+                    <button type="submit" id="feedback-submit">Send Feedback</button>
+                </form>
+            </div>
+        </div>
+    
+        <div class="container">
+    
+        <h1>Stay on schedule with scenes per day</h1>
+        <p>A simple calculator to help directors hit their prep deadlines. Find your daily scene target instantly.</p>
+        <div class="calculator-wrapper">
+            <div class="input-section">
+                <h4>Prep details</h4>
+                <div>
+                    <label for="start-date">Start prep</label>
+                    <input type="date" id="start-date" name="Start date" required>
+                </div>
+                <div>
+                    <label for="end-date">Finish prep</label>
+                    <input type="date" id="end-date" name="Finish date" required>
+                </div>
+                <div>
+                    <label for="total-scenes">Number of scenes to prep</label>
+                    <input type="number" id="total-scenes" name="Total number of scenes" required>
+                </div>
+                <div>
+                    <label for="total-done">Number of scenes already prepped</label>
+                    <input type="number" id="total-done" name="Number of scenes done" required>
+                </div>
+                <div>
+                    <label for="days-per-week">Days per week prepping</label>
+                    <input id="days-per-week" name="Days per week prepping" required>
+                </div>
+            </div>
+            <div class="result-section">
+                <div id="total-days-display"></div>
+                <div id="days-prepping"></div>
+                <div id="result"></div>
+                <button type="submit" id="calculate-btn">Calculate</button>
+            </div>
+    </div>
+
+    <script src="scenes-per-day.js"></script>
+
+</body>
+
+</html>
